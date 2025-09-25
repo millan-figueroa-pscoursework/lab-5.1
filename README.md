@@ -8,7 +8,7 @@ In this lab, you will create a dynamic shopping cart application to practice and
 
 ### Imagine you are tasked with building the shopping cart feature for an e-commerce website. Customers should be able to:
 
-[ ] Add items to their cart dynamically.<br>
+[✅] Add items to their cart dynamically.<br>
 [ ] View the items they have added, along with their prices and quantities.<br>
 [ ] Update the quantity of items in the cart, reflecting real-time price changes.<br>
 [ ] Remove items from the cart.<br>

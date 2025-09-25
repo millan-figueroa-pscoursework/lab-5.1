@@ -10,7 +10,7 @@ let cartArray = [];
 // Hook up button to even listener
 addProductButton.addEventListener("click", addItem);
 
-// Function to add item
+// ---- ADDITEM Function to add item
 function addItem() {
   const input = productNameInput.value;
   const price = productPriceInput.value;
@@ -24,16 +24,17 @@ function addItem() {
 
   cartArray.push(itemObject);
   updateTotalPrice(convertedPrice);
+  renderCart();
   console.log(cartArray);
 }
 
-// Function to update the total price
+// ---- UPDATETOTALPRICE Function to update the total price
 function updateTotalPrice(amount) {
   totalPrice += amount;
   totalPriceSpan.textContent = totalPrice;
 }
 
-// Function to remove an item
+// ---- REMOVEITEM Function to remove an item
 function removeItem(event) {
   const item = event.target.closest("li");
   const price = parseFloat(item.dataset.price);
@@ -41,7 +42,17 @@ function removeItem(event) {
   item.remove();
 }
 
-// [ ] Add items to their cart dynamically.<br>
+// ---- RENDERCART Function to show cart
+function renderCart() {
+  cart.innerHTML = "";
+  for (const item of cartArray) {
+    const li = document.createElement("li");
+    li.textContent = `${item.input} 🛒 $${item.convertedPrice}`;
+    cart.appendChild(li);
+  }
+}
+
+// [x] Add items to their cart dynamically.<br>
 // [ ] View the items they have added, along with their prices and quantities.<br>
-// [ ] Update the quantity of items in the cart, reflecting real-time price changes.<br>
+// [x] Update the quantity of items in the cart, reflecting real-time price changes.<br>
 // [ ] Remove items from the cart.
