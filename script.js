@@ -14,20 +14,23 @@ addProductButton.addEventListener("click", addItem);
 function addItem() {
   const input = productNameInput.value;
   const price = productPriceInput.value;
+  let convertedPrice = parseFloat(price);
+  console.log(convertedPrice);
 
   const itemObject = {
     input,
-    price,
+    convertedPrice,
   };
 
   cartArray.push(itemObject);
-  updateTotalPrice();
+  updateTotalPrice(convertedPrice);
   console.log(cartArray);
 }
+
 // Function to update the total price
 function updateTotalPrice(amount) {
   totalPrice += amount;
-  totalPriceSpan.textContent = totalPrice.toFixed(2);
+  totalPriceSpan.textContent = totalPrice;
 }
 
 // Function to remove an item
