@@ -53,8 +53,3 @@ function renderCart() {
     cartUL.appendChild(li);
   }
 }
-
-// [x] Add items to their cart dynamically.<br>
-// [x] View the items they have added, along with their prices and quantities.<br>
-// [x] Update the quantity of items in the cart, reflecting real-time price changes.<br>
-// [ ] Remove items from the cart.
