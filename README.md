@@ -10,7 +10,7 @@ In this lab, you will create a dynamic shopping cart application to practice and
 
 [✅] Add items to their cart dynamically.<br>
 [ ] View the items they have added, along with their prices and quantities.<br>
-[ ] Update the quantity of items in the cart, reflecting real-time price changes.<br>
+[✅] Update the quantity of items in the cart, reflecting real-time price changes.<br>
 [ ] Remove items from the cart.<br>
 [ ] This lab will help you simulate and build core functionality used in modern e-commerce applications.<br>
 
@@ -46,6 +46,8 @@ Allow users to update the quantity of products in the cart and recalculate the t
 ## Reflection Questions
 
 ### How did you dynamically create and append new elements to the DOM?
+
+I added a loop inside the addTask function to loop the array items were being pushed into and use createElement and appendChild
 
 ### What steps did you take to ensure accurate updates to the total price?
 
