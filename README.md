@@ -11,8 +11,7 @@ In this lab, you will create a dynamic shopping cart application to practice and
 [✅] Add items to their cart dynamically.<br>
 [ ] View the items they have added, along with their prices and quantities.<br>
 [✅] Update the quantity of items in the cart, reflecting real-time price changes.<br>
-[ ] Remove items from the cart.<br>
-[ ] This lab will help you simulate and build core functionality used in modern e-commerce applications.<br>
+[✅] Remove items from the cart.<br>
 
 ## Objectives
 
@@ -51,6 +50,12 @@ I added a loop inside the addTask function to loop the array items were being pu
 
 ### What steps did you take to ensure accurate updates to the total price?
 
+I hat to use parseFLoat to convert the input string to a number so it can be calculated and updated.
+
 ### How did you handle invalid input for product name or price?
 
+I will be using the inputValidity property
+
 ### What challenges did you face when implementing the remove functionality?
+
+The remove functionality was working in terms of removing the item but kept returning NaN instead of updating
