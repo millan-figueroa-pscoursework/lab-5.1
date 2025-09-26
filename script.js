@@ -10,6 +10,12 @@ let cartArray = [];
 
 // Hook up button to even listener
 addProductButton.addEventListener("click", addItem);
+// Add event listener thru delegation
+cartUL.addEventListener("click", function (event) {
+  if (event.target.tagName === "LI") {
+    removeItem(event);
+  }
+});
 
 // ---- ADDITEM Function to add item
 function addItem() {
@@ -29,6 +35,19 @@ function addItem() {
   console.log(cartArray);
 }
 
+// ---- RENDERCART Function to show cart
+function renderCart() {
+  cartUL.innerHTML = "";
+  for (const item of cartArray) {
+    const li = document.createElement("li");
+    li.textContent = `${item.input} 🛒 $${item.convertedPrice}`;
+    li.dataset.convertedPrice = item.convertedPrice;
+
+    cartUL.appendChild(li);
+    // li.addEventListener("click", removeItem);
+  }
+}
+
 // ---- UPDATETOTALPRICE Function to update the total price
 function updateTotalPrice(amount) {
   totalPrice += amount;
@@ -39,17 +58,9 @@ function updateTotalPrice(amount) {
 function removeItem(event) {
   const item = event.target.closest("li");
   const price = parseFloat(item.dataset.convertedPrice);
+  console.log({ price });
+  console.log(item.dataset.convertedPrice);
+  console.log({ convertedPrice });
   updateTotalPrice(-price);
   item.remove();
-}
-
-// ---- RENDERCART Function to show cart
-function renderCart() {
-  cartUL.innerHTML = "";
-  for (const item of cartArray) {
-    const li = document.createElement("li");
-    li.textContent = `${item.input} 🛒 $${item.convertedPrice}`;
-    li.addEventListener("click", removeItem);
-    cartUL.appendChild(li);
-  }
 }
